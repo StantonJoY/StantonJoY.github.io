@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css?family=Mirza&amp;subset=latin-ext");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #928A97;
+  background-image: url("https://wallpaperaccess.com/full/250147.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.card {
+  -webkit-perspective: 1500px;
+  -moz-perspective: 1500px;
+  perspective: 1500px;
+  position: absolute;
+  left: calc(50% - 175px);
+  top: calc(50% - 250px);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition-delay: initial;
+  -moz-transition-delay: initial;
+  transition-delay: initial;
+  -webkit-transform: rotate(-10deg) translate(0, 0);
+  -moz-transform: rotate(-10deg) translate(0, 0);
+  -ms-transform: rotate(-10deg) translate(0, 0);
+  -o-transform: rotate(-10deg) translate(0, 0);
+  transform: rotate(-10deg) translate(0, 0);
+  -webkit-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  -moz-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+@media (max-width: 767px) {
+  .card {
+    left: calc(50% - 115px);
+    top: calc(50% - 164.5px);
+  }
+}
+@media (max-width: 479px) {
+  .card {
+    left: calc(50% - 75px);
+    top: calc(50% - 107px);
+  }
+}
+.card:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 50px #000;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.card.is-opened {
+  -webkit-transform: rotate(0deg) translate(175px, 0);
+  -moz-transform: rotate(0deg) translate(175px, 0);
+  -ms-transform: rotate(0deg) translate(175px, 0);
+  -o-transform: rotate(0deg) translate(175px, 0);
+  transform: rotate(0deg) translate(175px, 0);
+}
+@media (max-width: 767px) {
+  .card.is-opened {
+    -webkit-transform: rotate(0deg) translate(115px, 0);
+    -moz-transform: rotate(0deg) translate(115px, 0);
+    -ms-transform: rotate(0deg) translate(115px, 0);
+    -o-transform: rotate(0deg) translate(115px, 0);
+    transform: rotate(0deg) translate(115px, 0);
+  }
+}
+@media (max-width: 479px) {
+  .card.is-opened {
+    -webkit-transform: rotate(0deg) translate(75px, 0);
+    -moz-transform: rotate(0deg) translate(75px, 0);
+    -ms-transform: rotate(0deg) translate(75px, 0);
+    -o-transform: rotate(0deg) translate(75px, 0);
+    transform: rotate(0deg) translate(75px, 0);
+  }
+}
+.card.is-opened .cart-page-front {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+@keyframes cardIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-10deg) translate(0, -100%);
+    -moz-transform: rotate(-10deg) translate(0, -100%);
+    -ms-transform: rotate(-10deg) translate(0, -100%);
+    -o-transform: rotate(-10deg) translate(0, -100%);
+    transform: rotate(-10deg) translate(0, -100%);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(-10deg) translate(0, 0);
+    -moz-transform: rotate(-10deg) translate(0, 0);
+    -ms-transform: rotate(-10deg) translate(0, 0);
+    -o-transform: rotate(-10deg) translate(0, 0);
+    transform: rotate(-10deg) translate(0, 0);
+  }
+}
+.card,
+.card-page {
+  width: 350px;
+  height: 500px;
+}
+@media (max-width: 767px) {
+  .card,
+.card-page {
+    width: 230px;
+    height: 329px;
+  }
+}
+@media (max-width: 479px) {
+  .card,
+.card-page {
+    width: 150px;
+    height: 214px;
+  }
+}
+
+.card-page {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  -moz-transition: -moz-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  outline: 1px solid transparent;
+}
+
+.cart-page-front {
+  -webkit-transform-origin: 0 50% 0;
+  -moz-transform-origin: 0 50% 0;
+  -ms-transform-origin: 0 50% 0;
+  -o-transform-origin: 0 50% 0;
+  transform-origin: 0 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(-20deg);
+  -moz-transform: rotateY(-20deg);
+  -ms-transform: rotateY(-20deg);
+  -o-transform: rotateY(-20deg);
+  transform: rotateY(-20deg);
+  z-index: 2;
+}
+
+.cart-page-outside,
+.cart-page-inside {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+
+.cart-page-outside {
+  border: 10px solid #fbfbfb;
+  background: #c72320 url("data:image/jpeg;base64,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") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .cart-page-outside {
+    border: 5px solid #fbfbfb;
+  }
+}
+
+.cart-page-inside,
+.cart-page-bottom {
+  background-color: #d4d1d0;
+  background-image: url("https://www.dropbox.com/s/8hw7guch8d151kg/pattern.png?raw=1");
+  border: 20px solid #d4d1d0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .cart-page-inside,
+.cart-page-bottom {
+    border: 10px solid #d4d1d0;
+  }
+}
+
+.cart-page-inside {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  border-right: none !important;
+  background-position: 0px 80px;
+}
+@media (max-width: 767px) {
+  .cart-page-inside {
+    background-position: 0px 30px;
+  }
+}
+@media (max-width: 479px) {
+  .cart-page-inside {
+    background-position: 0px 30px;
+  }
+}
+
+.cart-page-bottom {
+  z-index: 1;
+  border-left: none !important;
+  background-position: -22px 80px;
+}
+@media (max-width: 767px) {
+  .cart-page-bottom {
+    background-position: 85px 30px;
+  }
+}
+@media (max-width: 479px) {
+  .cart-page-bottom {
+    background-position: 0px 30px;
+  }
+}
+
+.merry-christmas {
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+.merry-christmas svg {
+  width: 350px;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .merry-christmas svg {
+    width: 200px;
+  }
+}
+@media (max-width: 479px) {
+  .merry-christmas svg {
+    width: 150px;
+  }
+}
+
+.click-icon {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  bottom: 20px;
+  -webkit-animation: iconAnimation 1s infinite alternate ease-in-out;
+  -moz-animation: iconAnimation 1s infinite alternate ease-in-out;
+  animation: iconAnimation 1s infinite alternate ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+.click-icon svg {
+  width: 96px;
+  height: 96px;
+}
+@media (max-width: 767px) {
+  .click-icon svg {
+    width: 72px;
+    height: 72px;
+  }
+}
+@media (max-width: 479px) {
+  .click-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+.click-icon.is-hidden {
+  opacity: 0;
+}
+
+@keyframes iconAnimation {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 10px);
+    -moz-transform: translate(-50%, 10px);
+    -ms-transform: translate(-50%, 10px);
+    -o-transform: translate(-50%, 10px);
+    transform: translate(-50%, 10px);
+  }
+}
+p {
+  font-family: "Mirza", Verdana, Arial, serif;
+  font-size: 36px;
+  line-height: 1.2em;
+  padding-left: 10px;
+}
+@media (max-width: 767px) {
+  p {
+    font-size: 24px;
+  }
+}
+@media (max-width: 479px) {
+  p {
+    font-size: 20px;
+  }
+}
